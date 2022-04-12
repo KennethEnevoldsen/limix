@@ -1,3 +1,16 @@
+# KCE: How to install
+
+```
+# download repo
+git clone https://github.com/KennethEnevoldsen/limix/tree/2.0.x
+cd repo
+# update package manager to get new dependency resolver
+pip install pip --upgrade
+
+# install package in editable model
+pip install -e .
+```
+
 # limix
 
 [![Travis](https://img.shields.io/travis/com/limix/limix/2.0.x.svg?style=flat-square&label=linux%20%2F%20macos%20build)](https://travis-ci.com/limix/limix) [![AppVeyor](https://img.shields.io/appveyor/ci/Horta/limix/2.0.x.svg?style=flat-square&label=windows%20build)](https://ci.appveyor.com/project/Horta/limix) [![Documentation](https://readthedocs.org/projects/limix/badge/?version=2.0.x&style=flat-square)](https://limix.readthedocs.io/en/2.0.x/)
