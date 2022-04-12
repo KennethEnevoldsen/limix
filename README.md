@@ -1,15 +1,45 @@
 # KCE: How to install
 
 ```
+# create virtual environment
+conda create -n limix python=3.9
+conda activate limix
+
 # download repo
-git clone https://github.com/KennethEnevoldsen/limix/tree/2.0.x
-cd repo
+git clone https://github.com/KennethEnevoldsen/limix/tree/master
+cd limix
+git checkout 2.0.x  # change to version 2.0.x (to get access to struct LMM)
+
+
 # update package manager to get new dependency resolver
 pip install pip --upgrade
 
-# install package in editable model
+# install package in editable model (to allow for changes after installation. If you don't care simply remove the -e)
 pip install -e .
+# this takes a short while as it tries to resolve all the dependencies.
 ```
+
+From here they argue you should test it using:
+```
+python -c "import limix; limix.test()"
+```
+
+Which throws an error. However the error simply states that two arrays which are essentially the same have a different nth decimal.
+```
+    -array([[1.764052],
+    -       [0.400157],
+    -       [0.978738],
+    -       [2.240893]])
+    +array([[1.76405235],
+    +       [0.40015721],
+    +       [0.97873798],
+    +       [2.2408932 ]])
+```
+
+Instead what I do to test that everything is working is running the struct-lmm.ipynb tutorial.
+
+Here everything seems to work as intended. (at least I get the same results as he do in his notebook)
+
 
 # limix
 
